@@ -30,21 +30,32 @@ main
 
 #topButton
     display: none
+    justify-content: center
+    align-items: center
     position: fixed
-    bottom: 20px
+    bottom: 30px
     right: 30px
     z-index: 99
     border: none
     outline: none
     background-color: variables.$colorMain
     border-radius: 50%
-    padding: 5px
+    padding: 0px
+    height: 70px
+    width: 70px
 
     img
-        rotate: 180deg
-        position: relative
-        bottom: 2px
+        // position: relative
+        // bottom: 6px
         transform: scale(0.7)
 
     &:hover
         transform: scale(1.1)
+
+    @media only screen and (max-width: 700px)
+        height: 50px
+        width: 50px
+        
+        img
+            transform: scale(0.5)
+    
