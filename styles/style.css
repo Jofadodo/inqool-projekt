@@ -1,0 +1,61 @@
+/* Import color variables */
+/* Mixins */
+body {
+  padding: 0;
+  margin: 0;
+  max-width: 1150px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+a, a:active, a:visited, a:link {
+  text-decoration: none;
+  color: #000;
+}
+.navigation {
+  width: 100%;
+  max-width: 1150px;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0 0 8px 8px;
+  background-color: rgb(13, 158, 0);
+  position: fixed;
+  top: 0;
+  transition: top 0.4s;
+}
+.navigation__link-list {
+  padding: 20px;
+  font-size: 1.8em;
+  color: #000;
+}
+.navigation__link-list img {
+  border-radius: 50%;
+  height: 100px;
+}
+.navigation__link-list--search {
+  height: 30px;
+  display: flex;
+}
+.navigation__search {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.navigation__search--input {
+  display: inline;
+}
+.navigation__search--img {
+  height: 30px;
+}
+
+#div1 {
+  height: 2000px;
+  border: 2px solid black;
+}
+
+#div2 {
+  height: 500px;
+  border: 2px solid black;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,13 @@
+/* Color variables */
+/* Mixins */
+.navigation {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  flex-direction: row;
+}
+.navigation__link-list {
+  padding: 10px;
+  font-size: 1.8em;
+  color: #000;
+}/*# sourceMappingURL=navigation.css.map */
