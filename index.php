@@ -39,7 +39,24 @@
 
     
     <section class="portfolio" id="next">
-        
+        <?php
+            include 'shared/database.php';
+            $sql = "SELECT * FROM portfolio ORDER BY date desc";
+            $data = getDataFromDatabase($sql);
+
+            echo "<ul>";
+            foreach ($data as $tab) {
+                echo "<li>";
+                    echo "<a href='#'>";
+                        echo "<h2>" . $tab["header"] . "</h2>";
+                        echo "<p>" . $tab["description"] . "</p>";
+                        echo "<p>" . date_format(date_create($tab["date"]), "d.m.Y") . "</p>";
+                    echo "</a>";
+                echo "</li>";
+            }
+            echo "</ul>";
+
+        ?>
     </section>
         
     <section id="div2">

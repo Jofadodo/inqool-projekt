@@ -1,5 +1,23 @@
 @use 'variables.sass'
 
 .portfolio
-    height: 200px
     border: 2px solid black
+    overflow-y: scroll
+    scrollbar-width: none
+
+    &::-webkit-scrollbar
+        display: none
+
+    ul 
+        display: flex
+        flex-direction: row
+        width: fit-content
+
+        li
+            width: 350px
+            height: auto
+            border: 1px solid variables.$colorSecondary
+            border-radius: 5px
+
+            padding: 20px
+            margin: 10px
