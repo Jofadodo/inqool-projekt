@@ -19,7 +19,6 @@
 
         <ul class="navigation__link-list">
             <li onclick="topFunction()"><img src="img/me.jpg" alt="Me"></li>
-            <!-- <a href="#div2">About me</a> -->
             <li onclick="scrollToTargetAdjusted('div2')">About me</li>
         </ul>
 

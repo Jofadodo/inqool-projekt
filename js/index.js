@@ -7,6 +7,9 @@
 //     });
 // });
 
+
+
+
 function scrollToTargetAdjusted($target) {
   var element = document.getElementById($target);
   // hodnota offsetu, keby sa neskryl navbar, prekryl by zobrazený element (100)
@@ -20,7 +23,14 @@ function scrollToTargetAdjusted($target) {
   });   
 }
 
+window.onload = function() {setFunction()};
+function setFunction() {
+  const element = document.getElementById("aaa");
+  const cssObj = window.getComputedStyle(element, null);
+  const offset = (parseInt(cssObj.getPropertyValue("height").replace(/px/,""))+50)+"px";
 
+  document.getElementById('next').style.marginTop = offset;
+}
 
 
 
