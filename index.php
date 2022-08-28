@@ -1,4 +1,7 @@
-<?php include 'shared/header.php' ?>
+<?php 
+    include 'shared/header.php';
+    include 'shared/databaseData.php';
+?>
 
 <main>
 
@@ -40,17 +43,17 @@
     
     <section class="portfolio" id="portfolio">
         <?php
-            include 'shared/database.php';
+
             $sql = "SELECT * FROM portfolio ORDER BY date desc";
             $data = getDataFromDatabase($sql);
 
             echo "<ul class='portfolio__block'>";
             foreach ($data as $tab) {
                 echo "<li class='portfolio__block__box'>";
-                    echo "<a href='#'>";
+                    echo "<a href=''>";
                         echo "<h2>" . $tab["header"] . "</h2>";
-                        echo "<p>" . $tab["description"] . "</p>";
-                        echo "<p>" . date_format(date_create($tab["date"]), "d.m.Y") . "</p>";
+                        echo "<p class='portfolio__block__box--description'>" . $tab["description"] . "</p>";
+                        echo "<p class='portfolio__block__box--date'>" . date_format(date_create($tab["date"]), "d.m.Y") . "</p>";
                     echo "</a>";
                 echo "</li>";
             }
@@ -64,10 +67,33 @@
         <button class="portfolio__scroll-buttons--left" id="scrollLeft" type="button" onclick="scrollToLeft()"><img src="img/scroll-arrow.png" alt=""></button>
         <button class="portfolio__scroll-buttons--right" id="scrollRight" type="button" onclick="scrollToRight()"><img src="img/scroll-arrow.png" alt=""></button>
     </div>
+
+    <section class="randomText">
+        <h2>Lorem ipsum</h2>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit natus deserunt iusto et doloremque facere vitae qui deleniti eaque? Eius hic, dolores in iusto corrupti quidem molestiae voluptate? Quo, aliquid!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos officiis eum maiores accusamus nesciunt veritatis mollitia culpa! Ipsum necessitatibus rerum aspernatur tempore dolor pariatur autem iusto, consectetur sed architecto similique!
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta, itaque? Quam dolore similique quo quibusdam magnam velit iusto minus explicabo veniam repudiandae nostrum rerum, blanditiis quasi nisi omnis accusamus. Voluptatibus.
+    </section>
     
         
-    <section id="div2">
-            
+    <section class="skills" id="skills">
+        <?php
+
+            $sql = "SELECT id, skill FROM skills";
+            $data = getDataFromDatabase($sql);
+
+            echo "<ul class='skills__block'>";
+            foreach ($data as $skill) {
+                echo "<li class='skills__block__box' onclick='getSkillDescription(event, \"".$skill["id"]."\")'>";
+                    echo $skill["skill"];
+                echo "</li>";
+            }
+            echo "</ul>";
+
+        ?>
+
+        <div class="skills__description">
+        </div>
     </section>
                 
                 

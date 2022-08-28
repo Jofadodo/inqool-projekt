@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="js/index.js" charset="utf-8" defer></script>
     <script type="text/javascript" src="js/slider.js" charset="utf-8" defer></script>
+    <script type="text/javascript" src="js/skills.js" charset="utf-8" defer></script>
 
     <title>Inqool projekt</title>
 
@@ -21,9 +22,11 @@
 
     <nav class="navigation">
 
+        <img src="img/me.jpg" alt="Me" onclick="topFunction()">
+
         <ul class="navigation__link-list">
-            <li onclick="topFunction()"><img src="img/me.jpg" alt="Me"></li>
             <li onclick="scrollToTargetAdjusted('portfolio')">portfolio</li>
+            <li onclick="scrollToTargetAdjusted('skills')">skills</li>
         </ul>
 
         <div class="navigation__search">
@@ -38,6 +41,3 @@
         </div>
 
     </nav>
-
-
-

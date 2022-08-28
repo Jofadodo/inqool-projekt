@@ -30,6 +30,7 @@ function setFunction() {
   const offset = (parseInt(cssObj.getPropertyValue("height").replace(/px/,""))+50)+"px";
 
   document.getElementById('portfolio').style.marginTop = offset;
+  document.getElementsByClassName('skills__block__box')[0].click();
 }
 
 
@@ -53,8 +54,14 @@ function setFunction() {
 
 function searchBar() {
   var input = document.getElementById("search");
-  if (input.style.width > "0px") input.style.width = null;
-  else input.style.width = "100%";
+  if (input.style.width > "0px") {
+    input.style.width = null;
+    input.style.paddingRight = "0px";
+  }
+  else {
+    input.style.width = "100%";
+    input.style.paddingRight = "40px";
+  }
 }
 
 
@@ -76,6 +83,7 @@ function navbarHide() {
   } else {
     document.getElementsByClassName("navigation")[0].style.top = "-140px";
     document.getElementById("search").style.width = null;
+    document.getElementById("search").style.paddingRight = "0px";
   }
   prevScrollpos = currentScrollPos;
 }
@@ -89,13 +97,13 @@ function topFunction() {
 
 function scrollToLeft() {
   document.getElementById('portfolio').scrollTo({
-    left: document.getElementById('portfolio').scrollLeft-600,
+    left: document.getElementById('portfolio').scrollLeft-700,
     behavior: "smooth"
   });
 }
 function scrollToRight() {
   document.getElementById('portfolio').scrollTo({
-    left: document.getElementById('portfolio').scrollLeft+600,
+    left: document.getElementById('portfolio').scrollLeft+700,
     behavior: "smooth"
   });
 }
@@ -105,7 +113,8 @@ document.getElementById('portfolio').onscroll = function(){
   if (document.getElementById('portfolio').scrollLeft > 0) {
       document.getElementById('scrollLeft').style.display = "block";
   } else document.getElementById('scrollLeft').style.display = "none";
-  if (portfolio.offsetWidth + portfolio.scrollLeft >= portfolio.scrollWidth) {
+
+  if (portfolio.offsetWidth + portfolio.scrollLeft >= portfolio.scrollWidth - 1) {
     document.getElementById('scrollRight').style.display = "none";
   } else document.getElementById('scrollRight').style.display = "block";
 }
