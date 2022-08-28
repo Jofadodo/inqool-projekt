@@ -2,7 +2,7 @@
 
 <main>
 
-    <section class="css-slider-wrapper" id="aaa">
+    <section class="css-slider-wrapper" id="images">
         <input type="radio" name="slider" class="slide-radio1" checked id="slider_1">
         <input type="radio" name="slider" class="slide-radio2" id="slider_2">
         <input type="radio" name="slider" class="slide-radio3" id="slider_3">
@@ -38,15 +38,15 @@
     </section> -->
 
     
-    <section class="portfolio" id="next">
+    <section class="portfolio" id="portfolio">
         <?php
             include 'shared/database.php';
             $sql = "SELECT * FROM portfolio ORDER BY date desc";
             $data = getDataFromDatabase($sql);
 
-            echo "<ul>";
+            echo "<ul class='portfolio__block'>";
             foreach ($data as $tab) {
-                echo "<li>";
+                echo "<li class='portfolio__block__box'>";
                     echo "<a href='#'>";
                         echo "<h2>" . $tab["header"] . "</h2>";
                         echo "<p>" . $tab["description"] . "</p>";
@@ -57,7 +57,14 @@
             echo "</ul>";
 
         ?>
+
     </section>
+
+    <div class="portfolio__scroll-buttons">
+        <button class="portfolio__scroll-buttons--left" id="scrollLeft" type="button" onclick="scrollToLeft()"><img src="img/scroll-arrow.png" alt=""></button>
+        <button class="portfolio__scroll-buttons--right" id="scrollRight" type="button" onclick="scrollToRight()"><img src="img/scroll-arrow.png" alt=""></button>
+    </div>
+    
         
     <section id="div2">
             

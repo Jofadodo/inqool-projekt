@@ -1,5 +1,5 @@
 @use 'variables.sass'
-    
+
 body
     padding: 0
     margin: 0
@@ -8,6 +8,7 @@ body
     overflow-x: hidden
     font-family: 'Quicksand', sans-serif
     -webkit-font-smoothing: antialiased
+    box-sizing: border-box
 
 a 
     text-decoration: none
@@ -38,17 +39,9 @@ main
     bottom: 30px
     right: 30px
     z-index: 99
-    border: none
-    outline: none
-    background-color: variables.$colorMain
-    border-radius: 50%
-    padding: 0px
-    height: 70px
-    width: 70px
+    @include variables.buttons
 
     img
-        // position: relative
-        // bottom: 6px
         transform: scale(0.7)
 
     &:hover

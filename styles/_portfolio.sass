@@ -1,19 +1,19 @@
 @use 'variables.sass'
 
 .portfolio
-    border: 2px solid black
+    // border: 2px solid black
     overflow-y: scroll
     scrollbar-width: none
 
     &::-webkit-scrollbar
         display: none
 
-    ul 
+    &__block 
         display: flex
         flex-direction: row
         width: fit-content
 
-        li
+        &__box
             width: 350px
             height: auto
             border: 1px solid variables.$colorSecondary
@@ -21,3 +21,39 @@
 
             padding: 20px
             margin: 10px
+
+            a:hover 
+                transition-duration: .3s
+                transform: scale(1.05)
+
+
+    &__scroll-buttons
+        position: relative
+        bottom: 190px
+        display: flex
+        justify-content: space-between
+        pointer-events: none
+
+        &--left,
+        &--right
+            @include variables.buttons
+            margin: 0 20px
+            opacity: 0.65
+            pointer-events: all
+
+            &:hover
+                opacity: 0.85
+                transform: scale(1.1)
+
+        &--left
+            display: none
+            
+            img
+                rotate: -90deg
+
+
+        &--right
+            margin-left: auto
+
+            img
+                rotate: 90deg

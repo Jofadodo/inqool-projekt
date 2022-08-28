@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/index.js" charset="utf-8" defer></script>
+    <script type="text/javascript" src="js/slider.js" charset="utf-8" defer></script>
+
     <title>Inqool projekt</title>
 
 </head>
@@ -19,7 +23,7 @@
 
         <ul class="navigation__link-list">
             <li onclick="topFunction()"><img src="img/me.jpg" alt="Me"></li>
-            <li onclick="scrollToTargetAdjusted('div2')">About me</li>
+            <li onclick="scrollToTargetAdjusted('portfolio')">portfolio</li>
         </ul>
 
         <div class="navigation__search">
