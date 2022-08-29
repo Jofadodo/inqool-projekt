@@ -13,6 +13,7 @@
     <script type="text/javascript" src="js/index.js" charset="utf-8" defer></script>
     <script type="text/javascript" src="js/slider.js" charset="utf-8" defer></script>
     <script type="text/javascript" src="js/skills.js" charset="utf-8" defer></script>
+    <script type="text/javascript" src="js/scrolling.js" charset="utf-8" defer></script>
 
     <title>Inqool projekt</title>
 

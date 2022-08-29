@@ -29,7 +29,10 @@ function scrollToTargetAdjusted($target) {
   }
 }
 
-window.onload = function() {setFunction()};
+window.onload = function() {
+  document.getElementsByClassName('skills__block__box')[0].click();
+  setFunction();
+};
 window.onresize = function() {setFunction()};
 function setFunction() {
   const element = document.getElementById("images");
@@ -37,26 +40,8 @@ function setFunction() {
   const offset = (parseInt(cssObj.getPropertyValue("height").replace(/px/,""))+50)+"px";
 
   document.getElementById('portfolio').style.marginTop = offset;
-  document.getElementsByClassName('skills__block__box')[0].click();
 }
 
-
-
-
-
-// var state = 0;
-// function changeNav() {
-//     if (state == 0) {
-//         document.getElementById("mySidebar").style.width = "70%";
-//         document.getElementById("myButton").className = "closebtn";
-//         state = 1;
-//     }
-//     else {
-//         document.getElementById("mySidebar").style.width = null;
-//         document.getElementById("myButton").className = "openbtn";
-//         state = 0;
-//     }
-// }
 
 function changeNav() {
   if (menuButton.className == "navigation__openbtn") {

@@ -14,7 +14,7 @@
             <input type="date" id="date" name="date" required value="<?php echo date('Y-m-d') ?>" class="input-form__wrapper__input">
             <div>
                 <input type="submit" value="Save" class="input-form__wrapper__input--button">
-                <input type="button" value="Close" onclick="toggleForm()" class="input-form__wrapper__input--button">
+                <input type="button" value="Close" onclick="toggleForm(), enableScroll()" class="input-form__wrapper__input--button">
             </div>
         </form>
     </section>
@@ -30,7 +30,7 @@
                 <img src="img/instagram.png" alt="" class="footer__links__image">
             </a>
         </div>
-        <button onclick="toggleForm()" title="Add new project" class="footer__button">Add project</button>
+        <button onclick="toggleForm(), disableScroll()" title="Add new project" class="footer__button">Add project</button>
     </footer>
 
 </body>
