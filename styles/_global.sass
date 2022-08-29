@@ -38,6 +38,12 @@ main
     padding: 0 10px
     overflow: hidden
 
+input,
+button,
+label
+    font-family: 'Quicksand', sans-serif
+    -webkit-font-smoothing: antialiased
+
 #topButton
     display: none
     justify-content: center
@@ -45,7 +51,7 @@ main
     position: fixed
     bottom: 30px
     right: 30px
-    z-index: 99
+    z-index: 2
     @include variables.buttons
 
     img
@@ -55,8 +61,8 @@ main
         transform: scale(1.1)
 
     @media only screen and (max-width: 700px)
-        height: 50px
-        width: 50px
+        height: 40px
+        width: 40px
         
         img
             transform: scale(0.5)

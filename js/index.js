@@ -24,6 +24,7 @@ function scrollToTargetAdjusted($target) {
 }
 
 window.onload = function() {setFunction()};
+window.onresize = function() {setFunction()};
 function setFunction() {
   const element = document.getElementById("images");
   const cssObj = window.getComputedStyle(element, null);
@@ -117,4 +118,14 @@ document.getElementById('portfolio').onscroll = function(){
   if (portfolio.offsetWidth + portfolio.scrollLeft >= portfolio.scrollWidth - 1) {
     document.getElementById('scrollRight').style.display = "none";
   } else document.getElementById('scrollRight').style.display = "block";
+}
+
+
+function toggleForm() {
+  var form = document.getElementById('form');
+
+  if (form.className == "input-form--active") {
+    form.className = "input-form";
+  }
+  else form.className = "input-form--active";
 }
