@@ -24,10 +24,10 @@
             <p>Projekt pre Inqool</p>
             <p>Jozef Fašanga</p>
             <a href="https://www.facebook.com/jozef.fasanga.5">Facebook
-                <img src="img/facebook.png" alt="">
+                <img src="img/facebook.png" alt="" class="footer__links__image">
             </a>
             <a href="https://www.instagram.com/jozeffasanga/">Instagram
-                <img src="img/instagram.png" alt="">
+                <img src="img/instagram.png" alt="" class="footer__links__image">
             </a>
         </div>
         <button onclick="toggleForm()" title="Add new project" class="footer__button">Add project</button>

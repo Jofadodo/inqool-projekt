@@ -7,7 +7,8 @@
 //     });
 // });
 
-
+var menuButton = document.getElementById("menuButton");
+var navigation = document.getElementsByClassName('navigation__link-list')[0];
 
 
 function scrollToTargetAdjusted($target) {
@@ -16,11 +17,16 @@ function scrollToTargetAdjusted($target) {
   var headerOffset = 0;
   var elementPosition = element.getBoundingClientRect().top;
   var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
+
   window.scrollTo({
       top: offsetPosition,
       behavior: "smooth"
-  });   
+  });
+
+  if (window.screen.width <= 720) {
+    navigation.style.width = "0%";
+    menuButton.className = "navigation__openbtn";
+  }
 }
 
 window.onload = function() {setFunction()};
@@ -52,16 +58,29 @@ function setFunction() {
 //     }
 // }
 
+function changeNav() {
+  if (menuButton.className == "navigation__openbtn") {
+    menuButton.className = "navigation__closebtn";
+    navigation.style.width = "70%";
+  }
+  else {
+    menuButton.className = "navigation__openbtn";
+    navigation.style.width = "0%";
+  }
+}
+
 
 function searchBar() {
   var input = document.getElementById("search");
   if (input.style.width > "0px") {
     input.style.width = null;
     input.style.paddingRight = "0px";
+    if (window.screen.width <= 475) menuButton.style.width = "70px";
   }
   else {
     input.style.width = "100%";
     input.style.paddingRight = "40px";
+    if (window.screen.width <= 475) menuButton.style.width = "0%";
   }
 }
 
@@ -95,16 +114,20 @@ function topFunction() {
       behavior: 'smooth'
   });
 }
-
+var scroll = 700;
 function scrollToLeft() {
+  if (window.screen.width <= 1000) scroll = 400;
+  else scroll = 700;
   document.getElementById('portfolio').scrollTo({
-    left: document.getElementById('portfolio').scrollLeft-700,
+    left: document.getElementById('portfolio').scrollLeft-scroll,
     behavior: "smooth"
   });
 }
 function scrollToRight() {
+  if (window.screen.width <= 1000) scroll = 400;
+  else scroll = 700;
   document.getElementById('portfolio').scrollTo({
-    left: document.getElementById('portfolio').scrollLeft+700,
+    left: document.getElementById('portfolio').scrollLeft+scroll,
     behavior: "smooth"
   });
 }

@@ -34,7 +34,7 @@
             <img src="img/loupe.png" alt="Search" class="navigation__search--img" onclick="searchBar()">
         </div>
 
-        <div id="myButton" class="navigation__openbtn" onclick="changeNav()">
+        <div id="menuButton" class="navigation__openbtn" onclick="changeNav()">
             <div></div>
             <div></div>
             <div></div>

@@ -40,7 +40,8 @@ main
 
 input,
 button,
-label
+label,
+textarea
     font-family: 'Quicksand', sans-serif
     -webkit-font-smoothing: antialiased
 
@@ -74,3 +75,21 @@ label
     text-align: justify
     border: 1px solid variables.$colorMain
     border-radius: 5px
+
+    &--flex
+        @extend .randomText
+        display: flex
+        justify-content: space-evenly
+        flex-wrap: wrap
+
+        > h2
+            width: 100%
+        > div
+            width: 45%
+            margin: 1%
+            border: 1px solid variables.$colorMain
+            border-radius: 5px
+            padding: 10px
+
+            @media only screen and (max-width: 880px)
+                width: 100%
