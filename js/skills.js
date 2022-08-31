@@ -9,11 +9,15 @@ function getSkillDescription(evt, id) {
 
     const xmlhttp = new XMLHttpRequest();
 
-    xmlhttp.onload = function() {
-      description.innerHTML = this.responseText;
-    }
-
-    xmlhttp.open("GET", "./shared/skillsData.php?q=" + id);
-    xmlhttp.send();
+    try {
+      xmlhttp.onload = function() {
+        description.innerHTML = this.responseText;
+      }
+  
+      xmlhttp.open("GET", "./shared/skillsData.php?q=" + id);
+      xmlhttp.send();
+    } catch(error) {
+      console.error(error);
+    };
 }
 
