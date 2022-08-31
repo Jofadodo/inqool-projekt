@@ -9,6 +9,7 @@
 
 var menuButton = document.getElementById("menuButton");
 var navigation = document.getElementsByClassName('navigation__link-list')[0];
+var form = document.getElementById('form');
 
 
 function scrollToTargetAdjusted($target) {
@@ -130,10 +131,15 @@ document.getElementById('portfolio').onscroll = function(){
 
 
 function toggleForm() {
-  var form = document.getElementById('form');
-
   if (form.className == "input-form--active") {
     form.className = "input-form";
   }
   else form.className = "input-form--active";
+}
+
+window.onclick = function(event) {
+  if (event.target == form) {
+    toggleForm();
+    enableScroll();
+  }
 }
